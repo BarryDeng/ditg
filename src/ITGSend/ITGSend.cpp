@@ -1257,7 +1257,7 @@ void *flowParser(void *param)
 				argc -= 3;
 				break;
 			case 'N':
-				if ((argc < 3) || (argv[h + 2] <= 0))	
+				if ((argc < 3) || (strtod(argv[h + 2], NULL) <= 0))	
 					ReportErrorAndExit("Protocol Parser",
 					    "Invalid pkts per sec", programName, id);
 				flows[id].IntArrivDistro = pdNormal;
@@ -1392,7 +1392,7 @@ void *flowParser(void *param)
 				argc -= 3;
 				break;
 			case 'n':
-				if ((argc < 3) || (argv[h + 2] <= 0))	
+				if ((argc < 3) || (strtod(argv[h + 2], NULL) <= 0))	
 					ReportErrorAndExit("Protocol Parser", "Invalid pkt size",
 					    programName, id);
 				delete flows[id].PktSize;

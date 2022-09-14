@@ -412,7 +412,7 @@ void burstyParser(int &h, char *argv[], int &argc, unsigned int flowId, SumRando
 			argc -= 3;
 			break;
 		case 'N':
-			if ((argc < 5) || (argv[h + 2] <= 0))	
+			if ((argc < 5) || (strtod(argv[h + 2], NULL) <= 0))	
 				ReportErrorAndExit("Protocol Parser",
 					"Invalid settings for the On/Off periods", programName, flowId);
 			b = strtod(argv[h + 1], NULL); 	
@@ -538,7 +538,7 @@ void burstyParser(int &h, char *argv[], int &argc, unsigned int flowId, SumRando
 			argc -= 3;
 			break;
 		case 'N':
-			if ((argc < 3) || (argv[h + 2] <= 0))	
+			if ((argc < 3) || (strtod(argv[h + 2], NULL) <= 0))	
 				ReportErrorAndExit("Protocol Parser",
 					"Invalid settings for the Off/Off periods", programName, flowId);
 			b = strtod(argv[h + 1], NULL); 	

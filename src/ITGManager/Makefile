@@ -8,7 +8,7 @@ ifeq ($(BUILD_ENV),WIN32_MINGW)
 else
 	@ printf "[ LD ]\t$@ <- $(OBJS)\n"
 endif
-	@ $(CXX) $(CXXFLAGS) $(OBJS) -L$(BIN) -lITG -o $@ $(LDFLAGS) 
+	@ $(CXX) $(CXXFLAGS) $(OBJS) -L$(BIN) -L../libITG -lITG -o $@ $(LDFLAGS) 
 	@ $(CP) $@ $(BIN)
 
 clean:
